@@ -1,0 +1,21 @@
+<%= form_for(@income_and_expense_item) do |f| %>
+  <% if @income_and_expense_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@income_and_expense_item.errors.count, "error") %> prohibited this income_and_expense_item from being saved:</h2>
+
+      <ul>
+      <% @income_and_expense_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Готово", class: 'btn' %>
+  </div>
+<% end %>

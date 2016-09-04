@@ -1,0 +1,20 @@
+<%= form_for(@cash_box) do |f| %>
+  <% if @cash_box.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@cash_box.errors.count, "error") %> prohibited this cash_box from being saved:</h3>
+
+      <ul>
+      <% @cash_box.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+ 
+    <%= f.submit 'Готово', class: 'btn'%>
+<% end %>

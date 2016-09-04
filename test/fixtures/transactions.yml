@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sum: 1
+  transactiontype: MyString
+  cash_box_id: 
+  income_and_expense_item_id: 
+
+two:
+  sum: 1
+  transactiontype: MyString
+  cash_box_id: 
+  income_and_expense_item_id: 

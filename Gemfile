@@ -28,7 +28,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'coffee-script-source', '~> 1.8.0'
@@ -44,3 +43,11 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'materialize-sass'
+gem 'jquery-turbolinks'
+gem 'rails4-autocomplete'
+gem 'jquery-ui-rails'
+gem 'devise', '~> 3.5', '>= 3.5.6'
+gem "chartkick"
+gem 'dateslices', '~> 0.0.3'
+gem 'kaminari'

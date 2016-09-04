@@ -1,0 +1,24 @@
+
+		<p id="notice"><%= notice %></p>
+
+		<p>
+			<strong>Сумма:</strong>
+			<%= @transaction.sum %>
+		</p>
+
+		<p>
+			<strong>Тип операции:</strong>
+			<%= @transaction.transactiontype %>
+		</p>
+
+		<p>
+			<strong>Касса:</strong>
+			<%= @transaction.cash_box.title unless @transaction.cash_box.blank? %>
+		</p>
+
+		<p>
+			<strong>Статья движения денег:</strong>
+			<%= @transaction.income_and_expense_item.title unless @transaction.income_and_expense_item.blank? %>
+		</p>
+
+		<%= link_to 'Редактировать', edit_transaction_path(@transaction) , class: 'btn'%> 

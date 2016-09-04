@@ -4,11 +4,72 @@
   <title>Personalfinance</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://www.google.com/jsapi" %>
+
   <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
-<%= yield %>
+
+  <nav>
+    <div class="nav-wrapper">
+      
+      <%= link_to(root_path, class:"brand-logo") do %>
+      <i class="material-icons">cloud</i>PF 
+      <% end %>
+
+
+      <ul class="right hide-on-med-and-down">
+
+
+        <% if user_signed_in? %>
+        <li><a <%= link_to "Главная", root_path %></li>
+        <li><a <%= link_to "Отчеты", reports_transactions_path %></li>
+        <li><a <%= link_to "Кассы", cash_boxes_path %></li>
+        <li><a <%= link_to "Статьи ДДС", income_and_expense_items_path %></li>
+        <li><a <%= link_to "Настройки", edit_user_registration_path %></li>
+        <li><a <%= link_to "Выход", destroy_user_session_path, method: :delete %></li>
+
+        <% else %>       
+        <li><a <%= link_to "Главная", root_path %></li>
+        <li><a <%= link_to "Регистрация", new_user_registration_path %></li>
+        <li><a <%= link_to "Вход", new_user_session_path %></li>
+        <% end %>  
+
+
+        
+      </ul>
+    </div>
+  </nav>
+
+
+
+  <div class="container">
+    
+    <div class="col s10">
+
+      <%= yield %>
+
+    </div>
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Personal Finance</h5>
+          <p class="grey-text text-lighten-4">Легкий и простой учет Ваших персональных финансов!</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2016 ООО Риелити
+        <a class="grey-text text-lighten-4 right" href="#!">О нас</a>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

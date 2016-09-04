@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Список касс</h3>
+
+<table class="highlight centered">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cash_boxes.each do |cash_box| %>
+    <tr>
+      <td><%= cash_box.title %></td>
+
+      <td>
+
+       <div style="position: relative;" >
+
+
+        <%= link_to(edit_cash_box_path(cash_box), class: "waves-effect waves-teal btn") do %>
+        <i class="material-icons">edit</i> 
+        <% end %>
+
+        <%= link_to(cash_box, method: :delete, data: { confirm: 'Are you sure?' } , class: "waves-effect waves-teal btn red") do %>
+        <i class="material-icons">delete</i> 
+        <% end %>
+
+      </div>
+    </td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+
+<br>
+
+
+<%= link_to(new_cash_box_path, class: "btn-floating btn-large waves-effect waves-light green") do %>
+<i class="material-icons">add</i> 
+<% end %>

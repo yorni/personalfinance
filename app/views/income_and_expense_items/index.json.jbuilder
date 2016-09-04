@@ -1,0 +1,1 @@
+json.array! @income_and_expense_items, partial: 'income_and_expense_items/income_and_expense_item', as: :income_and_expense_item

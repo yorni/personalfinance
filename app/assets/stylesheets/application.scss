@@ -1,0 +1,14 @@
+@import 'jquery-ui/datepicker';
+@import "materialize/components/color";
+$primary-color: color("teal", "lighten-2") !default;
+@import 'materialize';
+
+.pretty th .current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+th .asc:after  { content: "▵"  }
+
+th .desc:after  { content: "▿"  }

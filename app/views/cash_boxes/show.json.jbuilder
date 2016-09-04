@@ -1,0 +1,1 @@
+json.partial! "cash_boxes/cash_box", cash_box: @cash_box

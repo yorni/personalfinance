@@ -1,0 +1,42 @@
+<%= form_for(@transaction) do |f| %>
+<% if @transaction.errors.any? %>
+<div id="error_explanation">
+  <h3><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h3>
+
+  <ul>
+    <% @transaction.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="input-field col">
+  <%= f.label :sum, "Сумма" %><br>
+  <%= f.number_field :sum, :step => 0.01 %>
+</div>
+
+<div class="input-field col">
+ 
+
+ 
+<%= f.select :transactiontype, options_for_select([["Приход", "Приход"], ["Расход", "Расход"]], @transaction.transactiontype), { :include_blank => 'Тип движения денег' } %>
+
+</div>
+
+
+<div class="input-field col">
+  <%= f.label :cash_box_id, "Касса" %><br>
+  <%= f.collection_select :cash_box_id, current_user.cash_boxes.all, :id, :title %>
+    
+</div>
+
+<div class="input-field col">
+  <%= f.label :income_and_expense_item_id, "Статья движения денег" %><br>
+  <%= f.collection_select :income_and_expense_item_id, current_user.income_and_expense_items.all, :id, :title %>
+  
+</div>
+
+<%= f.submit 'Готово', class: 'btn' %>
+
+<% end %>

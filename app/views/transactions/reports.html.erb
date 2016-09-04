@@ -1,0 +1,49 @@
+
+<h3>Информация о движениях ДС</h3>
+
+<div id="card-stats">
+    <div class="row">
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-content  green white-text">
+                    <p class="card-stats-title"><i class="mdi-social-group-add"></i>Приход</p>
+                    <h4 class="card-stats-number"><%= format("%.2f", @income) %></h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-content pink lighten-1 white-text">
+                    <p class="card-stats-title"><i class="mdi-editor-insert-drive-file"></i>Расход</p>
+                    <h4 class="card-stats-number"><%= format("%.2f", @expense) %></h4>
+
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l4">
+            <div class="card">
+                <div class="card-content blue-grey white-text">
+                    <p class="card-stats-title"><i class="mdi-action-trending-up"></i>Остаток</p>
+                    <h4 class="card-stats-number"><%= format("%.2f", @cash) %></h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="col s10">
+<h3>Движения ДС по дням</h3>
+<%= column_chart [ {name: "Приход", data: @prihod_group},
+  {name: "Расход", data: @rashod_group} ]
+  %>
+</div>
+
+
+
+<div class="col s10">
+<h3>Остатки ДС</h3>
+<%= pie_chart  @ostatok_group %>
+</div>

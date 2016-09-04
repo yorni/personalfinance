@@ -21,3 +21,8 @@
 
 en:
   hello: "Hello world"
+  views:
+    pagination:
+      previous: "<i class='material-icons'>chevron_left</i>"
+      next: "<i class='material-icons'>chevron_right</i>"
+      truncate: "..."

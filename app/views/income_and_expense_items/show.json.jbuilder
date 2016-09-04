@@ -1,0 +1,1 @@
+json.partial! "income_and_expense_items/income_and_expense_item", income_and_expense_item: @income_and_expense_item

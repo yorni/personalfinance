@@ -1,0 +1,1 @@
+json.array! @cash_boxes, partial: 'cash_boxes/cash_box', as: :cash_box
